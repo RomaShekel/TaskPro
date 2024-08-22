@@ -1,9 +1,9 @@
 import { AppBar as Bar, Box, IconButton, Button, Drawer, Stack, Menu, MenuItem, Fade,
-
+    Typography,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useState } from "react";
-
+import css from './AppBar.module.css';
 
 const AppBar = () => {
     const [openSideBar, setOpenSideBar] = useState(false)
@@ -27,25 +27,35 @@ const AppBar = () => {
             <Drawer 
             open={openSideBar} 
             onClose={useToggle(setOpenSideBar, false)} 
-            sx={{width:260, height:1024, backgroundColor:'pink'}}>
-
+            >
+                <h2>HEllo</h2>
             </Drawer>
-            <Bar position="fixed" color="primary" sx={{width:1180, height:68}}>
-                <Stack direction="row" >
+            <Bar 
+            position="fixed"
+            color="primary" 
+            className={css.appBar}>
+                <Stack 
+                direction="row" 
+                className={css.stack}
+                >
                     <Box>
                     <IconButton aria-label="menu" onClick={useToggle(setOpenSideBar, true)} size='large'>
                        <MenuIcon/>
                     </IconButton>
                     </Box>
-                    <Box>
+                    <Box className={css.profileBox}>
                         <Button 
                         id='theme-button' 
                         onClick={handleClickOnMenu}
-                        sx={{color:"pink"}}
+                        className={css.themeBtn}
+                        color="secondary"
                         aria-controls={open ? 'fade-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
-                        >Theme
+                        >
+                        <Typography 
+                        className={css.themeBtn}
+                        textTransform={"none"}>Theme</Typography>
                         </Button>
                         <Menu
                         id='theme-menu'
@@ -61,6 +71,17 @@ const AppBar = () => {
                             <MenuItem onClick={handleCloseMenu}>Dark</MenuItem>
                             <MenuItem onClick={handleCloseMenu}>Violet</MenuItem>
                         </Menu>
+                        <Box>
+                        <Button 
+                        className={css.profileBtn}
+                        color="secondary">
+                            <Typography 
+                            variant="button" 
+                            textTransform={'none'}
+                            sx={{mr:'5px'}}>User</Typography>
+                            <img width={32} height={32}/>
+                        </Button>
+                        </Box>
                     </Box>
                 </Stack>
             </Bar>

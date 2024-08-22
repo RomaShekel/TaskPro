@@ -1,0 +1,28 @@
+.themeBtn {
+    text-transform: none;
+    padding: 0 !important;
+}
+
+.profileBtn {
+    text-transform: none;
+    padding: 0 !important;
+}
+
+.profileBox {
+    display: flex;
+    gap: 10px;
+}
+
+.appBar {
+    width: 375px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.stack {
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
