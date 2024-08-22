@@ -1,6 +1,19 @@
+.typographyDrawerLogo {
+    color: var(--primary-text-contrast);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.typographyDrawerLogoBox {
+    margin:15px 0 0 10px;
+}
+
 .themeBtn {
     text-transform: none;
     padding: 0 !important;
+    display: flex;
+    align-items: center;
 }
 
 .profileBtn {
@@ -25,4 +38,19 @@
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.drawerBox {
+    width: 225px;
+    height: 812px;
+    background-color: var(--primary-dark-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.iconBolt {
+    background-color: white;
+    fill: var(--primary-dark-color);
+    padding: 5px 5px 5px 5px;
+    border-radius: 8px;
 }

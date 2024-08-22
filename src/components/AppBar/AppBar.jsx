@@ -3,9 +3,12 @@ import { AppBar as Bar, Box, IconButton, Button, Drawer, Stack, Menu, MenuItem, 
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { PiLightningFill } from "react-icons/pi";
 import css from './AppBar.module.css';
 
 const AppBar = () => {
+
     const [openSideBar, setOpenSideBar] = useState(false)
     const [anchorEl, setAnchorEl] = useState(null);
     const openMenu = Boolean(anchorEl);
@@ -27,12 +30,19 @@ const AppBar = () => {
             <Drawer 
             open={openSideBar} 
             onClose={useToggle(setOpenSideBar, false)} 
+            color="primary"
             >
-                <h2>HEllo</h2>
+                <Box className={css.drawerBox}>
+                    <Box className={css.typographyDrawerLogoBox}>
+                    <Typography className={css.typographyDrawerLogo}>
+                        <PiLightningFill className={css.iconBolt} width={32}/> Task Pro
+                        </Typography>
+                    </Box>
+                </Box>
             </Drawer>
             <Bar 
             position="fixed"
-            color="primary" 
+            color="secondary" 
             className={css.appBar}>
                 <Stack 
                 direction="row" 
@@ -48,14 +58,14 @@ const AppBar = () => {
                         id='theme-button' 
                         onClick={handleClickOnMenu}
                         className={css.themeBtn}
-                        color="secondary"
+                        color="primary"
                         aria-controls={open ? 'fade-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                         >
                         <Typography 
                         className={css.themeBtn}
-                        textTransform={"none"}>Theme</Typography>
+                        textTransform={"none"}>Theme <IoIosArrowDown/></Typography>
                         </Button>
                         <Menu
                         id='theme-menu'
@@ -74,7 +84,7 @@ const AppBar = () => {
                         <Box>
                         <Button 
                         className={css.profileBtn}
-                        color="secondary">
+                        color="primary">
                             <Typography 
                             variant="button" 
                             textTransform={'none'}
