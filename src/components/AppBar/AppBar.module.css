@@ -5,8 +5,78 @@
     gap: 5px;
 }
 
+.createBoardBox {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 14px;
+}
+
+.typographyDrawerAdd {
+    color: var(--primary-text-contrast);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 70px;
+    margin-left: 14px;
+}
+
+.logoutButton {
+    text-transform: none !important;
+    color: var(--primary-text-contrast) !important;
+    margin-left: 20px !important;
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+}
+
+.avatar {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.logoutIcon {
+    width: 32px !important;
+    height: 32px !important;
+    color: var(--primary-text-contrast);
+}
+
+.texColor {
+    color: var(--primary-text-contrast);
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 133% !important;
+    letter-spacing: -0.02em !important;
+    display: flex !important;
+    align-items: center;
+    margin: 0;
+}
+
+.spanColor {
+    color: var(--primary-dark-color)
+}
+
 .typographyDrawerLogoBox {
     margin:15px 0 0 10px;
+}
+
+.supportBox {
+    padding: 15px 15px;
+    margin-left: 14px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 167px;
+    height: 238px;
+    color: var(--primary-text-contrast);
+    background: rgba(236, 237, 253, 0.4);
+}
+
+.addBoardButton {
+    background-color: var(--primary-light-color) !important;
+    height: 36px;
+    border-radius: 6px !important;
+    padding: 8px 10px !important;
+    max-width: 40px !important;
+    min-width: 40px !important;
+    display: flex !important;
 }
 
 .themeBtn {
@@ -45,6 +115,7 @@
     height: 812px;
     background-color: var(--primary-dark-color);
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -54,3 +125,27 @@
     padding: 5px 5px 5px 5px;
     border-radius: 8px;
 }
+
+/* .customScrollbar {
+    scrollbar-width: 4px; 
+    scrollbar-color: var(--primary-main-color) var(--primary-light-color);
+    padding: 0;
+    width: 4px;
+  }
+  
+  .customScrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .customScrollbar::-webkit-scrollbar-track {
+    background: var(--primary-light-color);
+  }
+  
+  .customScrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--primary-main-color);
+    border-radius: 29px; 
+  }
+  
+  .customScrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-dark-color)
+  } */

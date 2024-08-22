@@ -18,7 +18,16 @@ const theme = createTheme({
       dark: "#fcfcfc",
       contrastText: "#161616"
     }
-  }
+  },
+  components: {
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#ecedfd',
+        },
+      },
+    },
+  },
 })
 
 createRoot(document.getElementById('root')).render(

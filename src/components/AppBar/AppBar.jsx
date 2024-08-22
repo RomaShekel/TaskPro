@@ -1,15 +1,19 @@
 import { AppBar as Bar, Box, IconButton, Button, Drawer, Stack, Menu, MenuItem, Fade,
     Typography,
+    Avatar,
+    Divider,
 } from "@mui/material";
-import { Menu as MenuIcon } from "@mui/icons-material";
+import { Menu as MenuIcon, Add } from "@mui/icons-material";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { HiOutlineLogout } from "react-icons/hi";
 import { PiLightningFill } from "react-icons/pi";
+import { GrCircleQuestion } from "react-icons/gr";
 import css from './AppBar.module.css';
 
 const AppBar = () => {
 
-    const [openSideBar, setOpenSideBar] = useState(false)
+    const [openSideBar, setOpenSideBar] = useState(true)
     const [anchorEl, setAnchorEl] = useState(null);
     const openMenu = Boolean(anchorEl);
 
@@ -28,15 +32,43 @@ const AppBar = () => {
     return (
         <>
             <Drawer 
+              sx={{
+                '& .MuiDrawer-paper': {
+                  overflow: 'hidden', 
+                }}}
             open={openSideBar} 
             onClose={useToggle(setOpenSideBar, false)} 
             color="primary"
             >
                 <Box className={css.drawerBox}>
-                    <Box className={css.typographyDrawerLogoBox}>
-                    <Typography className={css.typographyDrawerLogo}>
-                        <PiLightningFill className={css.iconBolt} width={32}/> Task Pro
-                        </Typography>
+                    <Box>
+                        <Box className={css.typographyDrawerLogoBox}>
+                        <Typography className={css.typographyDrawerLogo}>
+                            <PiLightningFill className={css.iconBolt} width={32}/> Task Pro
+                            </Typography>
+                        </Box>
+                        <Box className={css.typographyDrawerAdd}>
+                            <Typography variant="body2" sx={{color: 'var(--primary-color-transparent)'}}>My Boards</Typography>
+                            <Divider></Divider>
+                            <Box className={css.createBoardBox}>
+                                <Box sx={{width:80}}>
+                                    <Typography>Create a new board</Typography>
+                                </Box>
+                                <Button className={css.addBoardButton}><Add width='20px' sx={{display:'flex'}}/></Button>
+                            </Box>
+                            <Divider/>
+                            <Box></Box>
+                        </Box>  
+                    </Box>
+                    <Box>
+                        <Box className={css.supportBox}>
+                            <img width='120px' src='../../images/2plant.webp'/>
+                            <p className={css.textColor}>
+                                If you need help with <span className={css.spanColor}>TaskPro</span>, check out our support resources or reach out to our customer support team.
+                            </p>
+                            <a className={css.textColor}> <GrCircleQuestion width={20} />  Need help?</a>
+                        </Box>
+                        <Button className={css.logoutButton}><HiOutlineLogout className={css.logoutIcon}/> Log out</Button>
                     </Box>
                 </Box>
             </Drawer>
@@ -89,7 +121,7 @@ const AppBar = () => {
                             variant="button" 
                             textTransform={'none'}
                             sx={{mr:'5px'}}>User</Typography>
-                            <img width={32} height={32}/>
+                            <Avatar variant="rounded" className={css.avatar} sizes="sm"/>
                         </Button>
                         </Box>
                     </Box>
