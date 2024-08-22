@@ -32,6 +32,10 @@ const AppBar = () => {
     return (
         <>
             <Drawer 
+              sx={{
+                '& .MuiDrawer-paper': {
+                  overflow: 'hidden', 
+                }}}
             open={openSideBar} 
             onClose={useToggle(setOpenSideBar, false)} 
             color="primary"
@@ -43,11 +47,13 @@ const AppBar = () => {
                             <PiLightningFill className={css.iconBolt} width={32}/> Task Pro
                             </Typography>
                         </Box>
-                        <Box>
-                            <Typography variant="p">My Boards</Typography>
+                        <Box className={css.typographyDrawerAdd}>
+                            <Typography variant="body2" sx={{color: 'var(--primary-color-transparent)'}}>My Boards</Typography>
                             <Divider></Divider>
-                            <Box>
-                                <Typography>Create a board</Typography>
+                            <Box className={css.createBoardBox}>
+                                <Box sx={{width:80}}>
+                                    <Typography>Create a new board</Typography>
+                                </Box>
                                 <Button className={css.addBoardButton}><Add width='20px' sx={{display:'flex'}}/></Button>
                             </Box>
                             <Divider/>
