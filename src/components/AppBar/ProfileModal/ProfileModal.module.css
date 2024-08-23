@@ -1,0 +1,7 @@
+.modalBox {
+    width: 335px;
+    height: 404px;
+    background-color: var(--primary-card-color);
+    margin: auto;
+    display: block;
+}
