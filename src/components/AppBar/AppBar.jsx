@@ -10,10 +10,12 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { PiLightningFill } from "react-icons/pi";
 import { GrCircleQuestion } from "react-icons/gr";
 import css from './AppBar.module.css';
+import ProfileModal from "./ProfileModal/ProfileModal";
 
 const AppBar = () => {
 
-    const [openSideBar, setOpenSideBar] = useState(true)
+    const [profileModal, setProfileModal] = useState(false)
+    const [openSideBar, setOpenSideBar] = useState(false)
     const [anchorEl, setAnchorEl] = useState(null);
     const openMenu = Boolean(anchorEl);
 
@@ -116,6 +118,7 @@ const AppBar = () => {
                         <Box>
                         <Button 
                         className={css.profileBtn}
+                        onClick={() => setProfileModal(true)}
                         color="primary">
                             <Typography 
                             variant="button" 
@@ -123,6 +126,7 @@ const AppBar = () => {
                             sx={{mr:'5px'}}>User</Typography>
                             <Avatar variant="rounded" className={css.avatar} sizes="sm"/>
                         </Button>
+                        <ProfileModal open={profileModal} setOpen={setProfileModal}/>
                         </Box>
                     </Box>
                 </Stack>

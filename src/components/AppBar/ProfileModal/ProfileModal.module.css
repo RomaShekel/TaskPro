@@ -1,0 +1,106 @@
+.modal {
+    width: 335px !important;
+    height: 404px !important;
+    margin: auto !important;
+}
+
+.title {
+    color: var(--primary-darkText-contrast);
+    font-weight: 500;
+    font-size: 18px !important;
+    letter-spacing: -0.02em !important;
+    font-family: Avenir !important;
+}
+
+.modalBox {
+    width: 287px;
+    height: 350px;
+    background-color: var(--primary-card-color);
+    margin: auto;
+    padding: 30px 24px 24px 24px;
+    display: block;
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
+}
+
+.submitBtn {
+    background-color: var(--primary-dark-color) !important;
+    color: var(--primary-card-color) !important;
+    text-transform: none !important;
+    border-radius: 8px;
+    width: 287px;
+    height: 49px;
+}
+
+.submitBtn:hover {
+    background-color: var(--primary-hover-color) !important;
+    color: var(--primary-text-color) !important;
+}
+
+.exitIconBtn {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    z-index: 9000;
+    padding: 0 !important;
+    display: block;
+}
+
+.exitIcon:hover {
+    background: var(--primary-main-color);
+    color:brown;
+}
+
+.exitIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.formBox {
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+}
+
+.formBox input {
+    width: 286px;
+    height: 49px;
+    padding: 0 16px;
+    border: solid 1px  var(--primary-main-color);
+    border-radius: 8px;
+}
+
+.formBox div {
+    max-width: 286px !important;
+    position: relative;
+}
+
+.pswBtn {
+    position: absolute !important;
+    top: 14px;
+    right: 14px;
+    padding: 0 !important;
+}
+
+.formBox div, .formBox div:hover {
+    border: none;
+}
+
+.formBox input:focus, .formBox input:hover {
+    border-radius: 8px !important;
+    border: solid 1px var(--primary-dark-color) !important;
+}
+
+fieldset {
+    width: 0;
+    height: 0;
+    padding: 0 !important;
+    border: none !important;
+}
+

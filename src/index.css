@@ -24,6 +24,17 @@ a:hover {
   cursor: pointer;
 }
 
+input, textarea, select, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  outline: none;
+}
+
 body {
   margin: 0;
   display: flex;
