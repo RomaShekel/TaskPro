@@ -10,7 +10,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { PiLightningFill } from "react-icons/pi";
 import { GrCircleQuestion } from "react-icons/gr";
 import css from './AppBar.module.css';
-import ProfileModal from "./ProfileModal/ProfileModal";
+import ProfileModal from "../ProfileModal/ProfileModal";
 
 const AppBar = () => {
 

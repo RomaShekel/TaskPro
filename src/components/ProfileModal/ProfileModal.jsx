@@ -1,4 +1,4 @@
-import { Modal, Box, TextField, Button, IconButton, Typography, useTheme, InputAdornment, OutlinedInput } from "@mui/material";
+import { Modal, Box, TextField, Button, IconButton, Typography, useTheme } from "@mui/material";
 import css from './ProfileModal.module.css'
 import { RxCross2 } from "react-icons/rx";
 import { AddAPhoto, Visibility, VisibilityOff } from "@mui/icons-material";
@@ -32,7 +32,7 @@ const [focusPwd, setFocusPwd] = useState(false)
         })
     }
 
-    const showPsw = (evt) => {
+    const showPsw = () => {
         setShowPassword(!showPassword);
         setFocusPwd(!focusPwd);
 
@@ -91,9 +91,10 @@ const [focusPwd, setFocusPwd] = useState(false)
                         value={values.email}
                         onChange={(e) => changeValues(e)}/>
 
-                       <Box>
+                       <Box className={css.pwdInput}>
                         <TextField
-                            type={showPassword? 'text' : 'password'}
+                            className={css.pwdInput}
+                            type={showPassword ? 'text' : 'password'}
                             name="password"
                             position="end"
                             value={values.password}

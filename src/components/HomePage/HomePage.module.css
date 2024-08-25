@@ -1,0 +1,84 @@
+.homeBox {
+ padding: 20px;
+ display: flex !important;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ color: #161616;
+}
+
+.iconBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    letter-spacing: -0.04em !important;
+}
+
+.iconBox div {
+    background-color: #161616;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconBox svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.descriptionBox {
+    max-width: 315px;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 129% !important;
+    letter-spacing: -0.02em !important;
+    text-align: center;
+    margin-bottom: 20px !important;
+    margin-top: 16px !important;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.regBtn {
+    border-radius: 8px !important;
+    width: 335px;
+    height: 49px;
+    background: #161616 !important;
+    color: white !important;
+}
+
+.loginBtn:hover {
+    text-decoration: underline !important;
+}
+
+@media screen and (min-width: 768px) {
+    .iconBox {
+        font-size: 40px !important;
+    }
+
+    .iconBox div {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .descriptionBox {
+        max-width: 473px !important;
+    }
+
+    .regBtn {
+        width: 344px !important;
+    }
+
+}

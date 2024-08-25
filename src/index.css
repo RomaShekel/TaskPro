@@ -41,11 +41,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* background: linear-gradient(180deg, rgba(196, 196, 196, 0) 25%, #bedbb0 92.19%) !important; */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+button {
+  text-transform: none !important;
 }
 
 button:hover {
