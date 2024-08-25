@@ -7,24 +7,30 @@ import './index.css'
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#ecedfd',
+      light: '#d6d8ff',
       main: "#7e57c2",
       dark: "#5255bc",
       card: "#E5E5E5",
+      hover: "#7b7ede",
       contrastText:"#fff",
+      darkText: "#161616"
     },
     secondary: {
       light: "#fcfcfc",
       main: "#fcfcfc",
       dark: "#fcfcfc",
       contrastText: "#161616"
+    },
+    action: {
+      hover: '#7b7ede',
+      focus: "#7b7ede",
     }
   },
   components: {
     MuiDivider: {
       styleOverrides: {
         root: {
-          backgroundColor: '#ecedfd',
+          backgroundColor: '#d6d8ff',
         },
       },
     },
