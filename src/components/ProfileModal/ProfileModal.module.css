@@ -1,5 +1,6 @@
 .modal {
     width: 335px !important;
+    height: 386px !important;
     height: 404px !important;
     margin: auto !important;
 }
@@ -9,12 +10,11 @@
     font-weight: 500;
     font-size: 18px !important;
     letter-spacing: -0.02em !important;
-    font-family: Avenir !important;
 }
 
 .modalBox {
+    height: 386px !important;
     width: 287px;
-    height: 350px;
     background-color: var(--primary-card-color);
     margin: auto;
     padding: 30px 24px 24px 24px;
@@ -30,8 +30,8 @@
     background-color: var(--primary-dark-color) !important;
     color: var(--primary-card-color) !important;
     text-transform: none !important;
-    border-radius: 8px;
-    width: 287px;
+    border-radius: 8px !important;
+    min-width: 287px;
     height: 49px;
 }
 
@@ -53,7 +53,6 @@
 }
 
 .exitIcon:hover {
-    background: var(--primary-main-color);
     color:brown;
 }
 
@@ -97,6 +96,10 @@
     border: solid 1px var(--primary-dark-color) !important;
 }
 
+.formBox .pwdInput {
+    padding-right: 28px !important;
+}
+
 fieldset {
     width: 0;
     height: 0;
@@ -104,3 +107,20 @@ fieldset {
     border: none !important;
 }
 
+@media screen and (min-width: 768px) {
+    .formBox input {
+        width: 352px;
+    }
+
+    .modal {
+        width: 400px !important;
+    }
+
+    .modalBox {
+        width: 352px
+    }
+
+    .formBox div {
+        max-width: 352px !important;
+    }
+}

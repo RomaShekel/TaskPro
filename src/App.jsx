@@ -1,7 +1,10 @@
 import './App.css'
-import AppBar1 from './components/AppBar/AppBar'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { useTheme } from '@emotion/react'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './components/HomePage/HomePage.jsx'
+import { Skeleton } from '@mui/material'
+import BoardPage from './components/BoardPage/BoardPage.jsx'
 
 function App() {
 
@@ -22,7 +25,14 @@ function App() {
 
   return (
     <>
-    <AppBar1/>
+    <Suspense fallback={<Skeleton />}>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          {/* <Route path='/signin' element={<SignIn />} /> */}
+          {/* <Route path='/signup' element={<SignUp />} /> */}
+          <Route path='/board' element={<BoardPage />} />
+        </Routes>
+      </Suspense>
     </>
   )
 }
