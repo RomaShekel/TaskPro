@@ -29,8 +29,8 @@ function App() {
     <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/signup' element={<RegistrationPage />} />
-          {/* <Route path='/login' element={<SignIn />} /> */}
+          <Route path='/signup' element={<RegistrationPage login={false} />} />
+          <Route path='/login' element={<RegistrationPage login={true} />} />
           <Route path='/board' element={<BoardPage />} />
         </Routes>
       </Suspense>

@@ -1,8 +1,11 @@
 import { Box, Button, Typography } from "@mui/material"
 import { PiLightningFill } from "react-icons/pi";
 import css from "./HomePage.module.css"
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+const navigate = useNavigate();
+
     return(
        <Box className={css.homeBox}
        >
@@ -19,8 +22,14 @@ const HomePage = () => {
             </Typography>
 
             <Box className={css.buttonBox}>
-                <Button className={css.regBtn}>Registration</Button>
-                <Button className={css.loginBtn}>Log in</Button>
+                <Button 
+                className={css.regBtn}
+                onClick={() => navigate('/signup')}
+                >Registration</Button>
+                <Button 
+                className={css.loginBtn}
+                onClick={() => navigate('/login')}
+                >Log in</Button>
             </Box>
        </Box>
     )
