@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage.jsx'
 import { Skeleton } from '@mui/material'
 import BoardPage from './components/BoardPage/BoardPage.jsx'
+import RegistrationPage from './components/RegistrationPage/RegistrationPage.jsx'
 
 function App() {
 
@@ -28,8 +29,8 @@ function App() {
     <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          {/* <Route path='/signin' element={<SignIn />} /> */}
-          {/* <Route path='/signup' element={<SignUp />} /> */}
+          <Route path='/signup' element={<RegistrationPage login={false} />} />
+          <Route path='/login' element={<RegistrationPage login={true} />} />
           <Route path='/board' element={<BoardPage />} />
         </Routes>
       </Suspense>

@@ -13,7 +13,7 @@ const theme = createTheme({
       dark: "#5255bc",
       card: "#E5E5E5",
       hover: "#7b7ede",
-      contrastText:"#fff",
+      contrastText:"#fcfcfc",
       darkText: "#161616"
     },
     secondary: {
