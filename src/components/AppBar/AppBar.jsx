@@ -11,8 +11,12 @@ import { PiLightningFill } from "react-icons/pi";
 import { GrCircleQuestion } from "react-icons/gr";
 import css from './AppBar.module.css';
 import ProfileModal from "../ProfileModal/ProfileModal";
+import { useTheme } from "@emotion/react";
 
 const AppBar = () => {
+
+    const theme = useTheme()
+    console.log(theme)
 
     const [profileModal, setProfileModal] = useState(false)
     const [openSideBar, setOpenSideBar] = useState(false)
@@ -59,7 +63,6 @@ const AppBar = () => {
                                 <Button className={css.addBoardButton}><Add width='20px' sx={{display:'flex'}}/></Button>
                             </Box>
                             <Divider/>
-                            <Box></Box>
                         </Box>  
                     </Box>
                     <Box>
@@ -75,7 +78,7 @@ const AppBar = () => {
                 </Box>
             </Drawer>
             <Bar 
-            position="fixed"
+            position="static"
             color="secondary" 
             className={css.appBar}>
                 <Stack 

@@ -1,0 +1,17 @@
+.boardHead {
+    display: flex !important;
+    justify-content: space-between !important;
+    min-width: 336px !important;
+    margin-bottom: auto !important;
+    padding: auto;
+}
+
+.box {
+    padding-top: 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    /* display: block !important; */
+}
