@@ -1,5 +1,6 @@
 .homeBox {
  padding: 20px;
+ margin-top: 20vh;
  display: flex !important;
  flex-direction: column;
  align-items: center;
