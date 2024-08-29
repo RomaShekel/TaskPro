@@ -67,6 +67,7 @@ const [focusPwd, setFocusPwd] = useState(false)
                             <Field
                             name="photo" 
                             type="file" 
+                            value=''
                             hidden={true}
                             />
 
