@@ -3,39 +3,26 @@ import css from './ProfileModal.module.css'
 import { RxCross2 } from "react-icons/rx";
 import { AddAPhoto, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userSelector } from "../../redux/selectors.js";
+import { Form, Formik, Field } from "formik";
+import { changeUser } from '../../redux/user/slice.js'
+
 const ProfileModal = ({open, setOpen}) => {
-// const theme = useTheme()
+
+const user = useSelector(userSelector);
+const dispatch = useDispatch()
 
 const [showPassword, setShowPassword] = useState(false)
 const [focusPwd, setFocusPwd] = useState(false)
 
-    const [ values, setValues ] = useState({
-        name: 'Зоя',
-        email: 'ehi@gmail.com',
-        password: '',
-        photo: '',
-    })
-
-    const changeValues = (evt) => {
-        setValues({
-            ...values,
-            [evt.target.name]: evt.target.value
-        })
-    }
-
-    const submitValues = (evt) => {
-        evt.preventDefault()
-        console.log(values)
-        setValues({
-            ...values,
-            photo: ''
-        })
+    const submitValues = (payload) => {
+        dispatch(changeUser(payload))
     }
 
     const showPsw = () => {
         setShowPassword(!showPassword);
         setFocusPwd(!focusPwd);
-
     }
 
     return(
@@ -61,45 +48,46 @@ const [focusPwd, setFocusPwd] = useState(false)
                     <RxCross2 className={css.exitIcon}/>
                 </Button>
                 
-                <Box sx={{margin: 'auto'}}>
-                    <Box sx={{backgroundImage: values.photo}}>
+                <Formik
+                initialValues={user}
+                onSubmit={submitValues}>
+                    <Form
+                    className={css.formBox}>
+
+                <Box className={css.photoBox}>
+                    <Box sx={{width:68, height:68}}>
+                    <img width="68px" height="68px" src='./src/images/plant.png'></img>
                     </Box>
+
                     <Button
+                    className={css.photoBtn}
                     component='label'>
 
                         <AddAPhoto/>
-                        <input 
-                    name="photo" 
-                    type="file" 
-                    hidden={true}
-                    value={values.photo}
-                    onChange={(e) => changeValues(e)}/>
+                            <Field
+                            name="photo" 
+                            type="file" 
+                            hidden={true}
+                            />
 
                     </Button>
                 </Box>
 
-                <Box>
-                    <form
-                    className={css.formBox}
-                    onSubmit={(e) => submitValues(e)}>
-                        <TextField
+                <Box className={css.inputs}>
+                        <Field
                         name="name"
-                        value={values.name}
-                        onChange={(e) => changeValues(e)}/>
-                        <TextField
+                        />
+                        <Field
                         name="email"
-                        value={values.email}
-                        onChange={(e) => changeValues(e)}/>
+                        type="email"
+                        />
 
                        <Box className={css.pwdInput}>
-                        <TextField
+                        <Field
                             className={css.pwdInput}
                             type={showPassword ? 'text' : 'password'}
                             name="password"
-                            position="end"
-                            value={values.password}
-                            onChange={(e) => changeValues(e)}
-                            focused={true}
+                            focused='true'
                             />
                                 
                             <IconButton className={css.pswBtn}
@@ -117,8 +105,10 @@ const [focusPwd, setFocusPwd] = useState(false)
                         >
                         Send
                         </Button>
-                    </form>
+                    
                 </Box>
+                    </Form>
+                </Formik>
 
             </Box>
         </Modal>

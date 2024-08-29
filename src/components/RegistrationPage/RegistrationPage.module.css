@@ -1,7 +1,7 @@
 .mainBox {
     border-radius: 8px;
     width: 250px;
-    height: 283px;  
+    height: 283px !important;  
     background: #fcfcfc;
     height: auto;
     margin: auto;
@@ -14,7 +14,7 @@
 }
 
 .mainLoginBox {
-    height: 215px;
+    height: 215px !important;
     height: auto;
     margin: auto;
     margin-top: 20vh;
