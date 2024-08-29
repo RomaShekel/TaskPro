@@ -4,9 +4,14 @@ import { Formik, Form, Field } from "formik";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser, registerUser } from "../../redux/user/operations.js";
+import { useSelector } from "react-redux";
+import { isLoginSelector } from "../../redux/selectors.js";
 
 
 const RegistrationPage = ({login = false}) => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [showPwd, setShowPwd] = useState(false);
     const [ isLoginPage, setIsLoginPage] = useState(login);
@@ -15,6 +20,11 @@ const RegistrationPage = ({login = false}) => {
         email: '',
         password:'',
     })
+
+    const isLogin = useSelector(isLoginSelector)
+    useEffect(() => {
+        isLogin ? navigate('/board') : null;
+    }, [isLogin, navigate])
 
     useEffect(() => {
         setInitialValues(
@@ -33,6 +43,7 @@ const RegistrationPage = ({login = false}) => {
 
     const handleSubmit = (values, action) => {
         console.log(values)
+        isLoginPage ? dispatch(loginUser(values)) : dispatch(registerUser(values))
         action.resetForm()
     }
 
@@ -61,8 +72,6 @@ const RegistrationPage = ({login = false}) => {
 
                         {isLoginPage ? null : 
                         <Field
-                        value={initialValues.name}
-                        onChange={(e) => setInitialValues({...initialValues, name:e.target.value})}
                         className={css.input}
                         type="text"
                         name="name"

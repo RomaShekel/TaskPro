@@ -9,7 +9,7 @@ const navigate = useNavigate();
     return(
        <Box className={css.homeBox}
        >
-            <img src="../../images/boy.png" />
+            <img src="./src/images/boy.png" />
             <Box className={css.iconBox}>
                 <Box>
                     <PiLightningFill/>

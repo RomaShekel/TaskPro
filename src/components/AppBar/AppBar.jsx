@@ -11,12 +11,8 @@ import { PiLightningFill } from "react-icons/pi";
 import { GrCircleQuestion } from "react-icons/gr";
 import css from './AppBar.module.css';
 import ProfileModal from "../ProfileModal/ProfileModal";
-import { useTheme } from "@emotion/react";
 
 const AppBar = () => {
-
-    const theme = useTheme()
-    console.log(theme)
 
     const [profileModal, setProfileModal] = useState(false)
     const [openSideBar, setOpenSideBar] = useState(false)
@@ -67,7 +63,7 @@ const AppBar = () => {
                     </Box>
                     <Box>
                         <Box className={css.supportBox}>
-                            <img width='120px' src='../../images/2plant.webp'/>
+                            <img width='54px' src='./src/images/plant.png'/>
                             <p className={css.textColor}>
                                 If you need help with <span className={css.spanColor}>TaskPro</span>, check out our support resources or reach out to our customer support team.
                             </p>

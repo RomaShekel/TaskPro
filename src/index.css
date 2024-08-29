@@ -24,9 +24,14 @@ a {
   color: var(--primary-main-color);
   text-decoration: inherit;
 }
+
 a:hover {
   color: var(--primary-dark-color);
   cursor: pointer;
+}
+
+p {
+  margin: 0 !important;
 }
 
 input, textarea, select, button {
