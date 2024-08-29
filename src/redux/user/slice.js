@@ -31,9 +31,9 @@ const userSlice = createSlice({
             state.loader = false;
             state.isLogin = true;
             state.user = {
-                name: action.payload.data.name,
-                email: action.payload.data.email,
-                photo: action.payload.data.photo,
+                name: action.payload.data.user.name,
+                email: action.payload.data.user.email,
+                photo: action.payload.data.user.photo,
             }
         })
         .addCase(loginUser.rejected, (state, action) => {

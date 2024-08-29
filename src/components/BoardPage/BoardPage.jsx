@@ -3,8 +3,17 @@ import { Typography, Box, Button } from "@mui/material";
 import { CiFilter } from "react-icons/ci";
 import AppBar from "../AppBar/AppBar.jsx";
 import css from './BoardPage.module.css'
+import { useSelector } from 'react-redux'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { isLoginSelector } from '../../redux/selectors.js'
 
 const BoardPage = () => {
+    const navigate = useNavigate()
+    const isLogin = useSelector(isLoginSelector)
+    useEffect(() => {
+      isLogin ? navigate('/board') : navigate('/')
+    },[isLogin, navigate])
     return(
         <>
         <AppBar/>
