@@ -72,6 +72,16 @@ button:hover {
   color: var(--primary-dark-color);
   fill: var(--primary-dark-color);
 }
+
+::-webkit-scrollbar {
+  background-color: var(--primary-text-contrast);
+  border-radius: 16px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  color: aqua !important;
+}
 /* button:focus */
 /* button:focus-visible {
   outline: 1px auto -webkit-focus-ring-color;

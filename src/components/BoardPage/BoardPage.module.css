@@ -3,7 +3,9 @@
     justify-content: space-between !important;
     min-width: 336px !important;
     margin-bottom: auto !important;
-    padding: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
 }
 
 .box {
@@ -14,4 +16,11 @@
 
 body {
     /* display: block !important; */
+}
+
+.columnsBox {
+    display: flex;
+    gap: 18px;
+    overflow: auto;
+    
 }
