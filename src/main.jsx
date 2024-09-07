@@ -13,7 +13,7 @@ const theme = createTheme({
       light: '#d6d8ff',
       main: "#7e57c2",
       dark: "#5255bc",
-      card: "#E5E5E5",
+      card: "#e5e5e5",
       hover: "#7b7ede",
       contrastText:"#fcfcfc",
       darkText: "#161616"
@@ -37,6 +37,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          background: "#fcfcfc",
+
+        }
+      }
+    }
   },
   typography: {
     fontFamily: `'Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', sans-serif`,

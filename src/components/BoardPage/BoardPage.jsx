@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { isLoginSelector } from '../../redux/selectors.js'
+import { Columns } from "../Columns/Columns.jsx";
 
 const BoardPage = () => {
     const navigate = useNavigate()
@@ -20,6 +21,15 @@ const BoardPage = () => {
         <Box className={css.boardHead}>
             <Typography variant="p">Board Name</Typography>
             <Button><CiFilter /> Filters</Button>
+        </Box>
+
+        <Box className={css.columnsBox}>
+        <Columns/>
+        <Columns/>
+        <Columns/>
+        <Columns/>
+        <Columns/>
+        <Columns/>
         </Box>
         </>
     )
